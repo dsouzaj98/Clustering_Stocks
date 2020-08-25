@@ -35,6 +35,17 @@ us_close=np.array(us_data["Adj Close"]).T
 us_open=np.array(us_data["Open"]).T
 
 
+
+us_rows, us_cols=us_close.shape
+
+us_movements=np.zeros([us_rows,us_cols])
+
+for i in range(0, us_rows):
+    us_movements[i,:]=np.subtract(us_close[i,:], us_open[i,:])
+
+for i in range(0, len(us_companies)):
+    print('Company: {}, Change: {}'.format(us_companies[i][0], sum(us_movements[i][:])))
+
 china_dict={
     "Tencent":"0700.HK", 
     "HSBC":"0005.HK",
@@ -56,8 +67,6 @@ china_companies=sorted(china_dict.items(), key=lambda x: x[1])
 china_data=web.DataReader(list(china_dict.values()), data_source, start_date, end_date)
 china_close=np.array(china_data["Adj Close"]).T
 china_open=np.array(us_data["Open"]).T
-
-print(type(us_data))
 
 
 
