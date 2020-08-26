@@ -17,9 +17,9 @@ def testing(key, val, clusters=2):
     test_open=np.array(test_open).T 
     test_close=np.array(test_close).T 
     test_movement=np.subtract(test_close[:900], test_open[:900])
-    new_movements=np.append(movements, test_movement, axis=0)
-    x=km(new_movements)
-    return (movements.shape)
+    #new_movements=np.append(movements, test_movement)
+    #x=km(new_movements)
+    return (test_movement.shape)
     
 print(testing('Tesla', 'TSLA'))
 
