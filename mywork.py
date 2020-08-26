@@ -71,6 +71,8 @@ china_companies=sorted(china_dict.items(), key=lambda x: x[1])
 china_data=web.DataReader(list(china_dict.values()), data_source, start_date, end_date)
 china_close=np.array(china_data["Close"]).T
 china_open=np.array(us_data["Open"]).T
+china_close*=.13
+china_open*=.13
 
 china_rows, china_cols=china_close.shape
 
