@@ -32,6 +32,8 @@ def pca(movements, clusters=2):
     kmeans.fit(reduced_data)
     labels=kmeans.predict(reduced_data)
     df=pd.DataFrame({'labels':labels, "companies":companies})
+    
+    #determine size of meshplot
     h = 0.01
 
     # plot the decision boundary
@@ -39,10 +41,10 @@ def pca(movements, clusters=2):
     y_min, y_max = reduced_data[:, 1].min() - 1, reduced_data[:,1].max() + 1
     xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 
-    # Obtain abels for each point in the mesh using our trained model
+    # Obtain labels for each point 
     Z = kmeans.predict(np.c_[xx.ravel(), yy.ravel()])
 
-    # Put the result into a color plot
+    # Placing in plot
     Z = Z.reshape(xx.shape)
 
     # define colorplot
@@ -58,7 +60,7 @@ def pca(movements, clusters=2):
     plt.plot(reduced_data[:, 0], reduced_data[:, 1], 'k.', markersize=5)
 
 
-    # plot the centroid of each cluster as a white X
+    # plot the centroids for each cluster
     centroids = kmeans.cluster_centers_
     plt.scatter(centroids[:, 0], centroids[:, 1],
     marker='x', s=169, linewidth=3,
