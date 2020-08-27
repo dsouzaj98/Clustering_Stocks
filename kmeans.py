@@ -4,14 +4,23 @@ from sklearn.pipeline import make_pipeline
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 
+def plot_us():
+    us_mv_dict={}
+    for i in range(15):
+        us_mv_dict[us_companies[i]]=np.mean(us_movements[i])
+        plt.plot(us_data[:900].index,us_movements[i])
+        plt.title(us_companies[i])
+        plt.savefig(f"Images/movements/{us_companies[i]}.png")
+    return us_mv_dict
+def plot_china():
+    c_mv_dict={}
+    for i in range(15):
+        c_mv_dict[china_companies[i]]=np.mean(china_movements[i])
+        plt.plot(china_data[:900].index,china_movements[i])
+        plt.title(china_companies[i])
+        plt.savefig(f"Images/movements/{china_companies[i]}.png")
+    return c_mv_dict
 
-
-# fig, axs=plt.subplots(3,5)
-# axs=axs.ravel()
-# for i in range(15):
-#     axs[i].plot(us_movements[i][:])
-#     plt.title(us_companies[i])
-#     plt.show()
 
 #implement Kmeans
 def km(movements, clusters=2):
