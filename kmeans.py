@@ -3,6 +3,7 @@ from mywork import *
 from sklearn.pipeline import make_pipeline
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
+from tomark import Tomark 
 
 def plot_us():
     us_mv_dict={}
@@ -10,7 +11,7 @@ def plot_us():
         us_mv_dict[us_companies[i]]=np.mean(us_movements[i])
         plt.plot(us_data[:900].index,us_movements[i])
         plt.title(us_companies[i])
-        plt.savefig(f"Images/movements/{us_companies[i]}.png")
+        #plt.savefig(f"Images/movements/{us_companies[i]}.png")
     return us_mv_dict
 def plot_china():
     c_mv_dict={}
@@ -18,9 +19,16 @@ def plot_china():
         c_mv_dict[china_companies[i]]=np.mean(china_movements[i])
         plt.plot(china_data[:900].index,china_movements[i])
         plt.title(china_companies[i])
-        plt.savefig(f"Images/movements/{china_companies[i]}.png")
+        #plt.savefig(f"Images/movements/{china_companies[i]}.png")
     return c_mv_dict
-
+def plot_movements():
+    mv_dict={}
+    for i in range(30):
+        mv_dict[companies[i]]=np.mean(movements[i])
+        plt.plot(us_data[:900].index, movements[i])
+        plt.title(companies[i])
+        #plt.savefig(f"Images/movements/{companies[i]}.png")
+    return mv_dict
 
 #implement Kmeans
 def km(movements, clusters=2):
@@ -82,3 +90,5 @@ def pca(movements, clusters=2):
 
 
 
+df1=pd.DataFrame.from_dict(plot_movements(), orient='index')
+print(df1.to_markdown())
