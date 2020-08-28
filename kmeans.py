@@ -1,5 +1,5 @@
 from sklearn.preprocessing import Normalizer
-from mywork import *
+from cleaning import *
 from sklearn.pipeline import make_pipeline
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA

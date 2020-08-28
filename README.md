@@ -4,6 +4,8 @@
 
 In this project, I will use KMeans Clustering to guess whether a company is based in the U.S. or China based on their stock price information.  
 
+The stock price data I used was gathered by Yahoo Finance.  The columns included Date, Open Price, Close Price, Adjusted Close, High, Low, and Volume.  I extracted the open and close prices to create a daily movement of the stock price.  
+
 
 
 |          Company                       |            Average Movement |

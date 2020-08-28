@@ -19,8 +19,8 @@ def testing(key, val, clusters=2):
     test_movement=np.subtract(test_close[:900], test_open[:900])
     #new_movements=np.append(movements, test_movement)
     #x=km(new_movements)
-    return (test_movement.shape)
+    return (test_movement)
     
-print(testing('Tesla', 'TSLA'))
+x=testing('HSBC', '0005.HK')
 
     
