@@ -132,7 +132,7 @@ I performed linear dimensionality reduction with PCA and then ran the kmeans clu
 From these tables, the pipeline appropriately put each company.  Does it work on a new company as well?
 
 I tried this by inputting a new company (Tesla) into the list and running it through the pipeline.
-|    |   labels | companies                       |
+|  index  |   labels | companies                       |
 |---:|---------:|:--------------------------------|
 |  0 |        0 | ('Apple', 'AAPL')               |
 | 14 |        0 | ('Verizon', 'VZ')               |
