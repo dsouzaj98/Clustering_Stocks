@@ -4,7 +4,8 @@ from sklearn.preprocessing import Normalizer
 from sklearn.pipeline import make_pipeline
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
-from kmeans import movements, km
+from kmeans import *
+from cleaning import *
 def testing(key, val, clusters=2):
 
     data_source='yahoo'
@@ -17,10 +18,12 @@ def testing(key, val, clusters=2):
     test_open=np.array(test_open).T 
     test_close=np.array(test_close).T 
     test_movement=np.subtract(test_close[:900], test_open[:900])
-    #new_movements=np.append(movements, test_movement)
-    #x=km(new_movements)
-    return (test_movement)
+    test_movement=np.reshape(test_movement, (1,-1))
+    new_movements=np.append(movements, test_movement, axis=0)
+    new_companies=companies+[key]
     
-x=testing('HSBC', '0005.HK')
+    return new_movements, new_companies
+    
+nm, nc=testing('Tesla','TSLA')
 
     

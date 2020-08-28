@@ -13,6 +13,7 @@ def plot_us():
         us_mv_dict[us_companies[i]]=np.mean(us_movements[i])
         plt.plot(us_data[:900].index,us_movements[i])
         plt.title(us_companies[i])
+        plt.ylabel("Stock Price Movement (USD)")
         plt.savefig(f"Images/movements/{us_companies[i]}.png")
     return us_mv_dict
 def plot_china():
@@ -22,6 +23,7 @@ def plot_china():
         c_mv_dict[china_companies[i]]=np.mean(china_movements[i])
         plt.plot(china_data[:900].index,china_movements[i])
         plt.title(china_companies[i])
+        plt.ylabel('Stock Price Movement (USD)')
         plt.savefig(f"Images/movements/{china_companies[i]}.png")
     return c_mv_dict
 def plot_movements():
@@ -34,7 +36,7 @@ def plot_movements():
     return mv_dict
 
 #implement Kmeans
-def km(movements, clusters=2):
+def km(movements, companies=companies, clusters=2):
     normalizer=Normalizer()
     kmeans=KMeans(n_clusters=clusters, max_iter=1000)
     pipeline=make_pipeline(normalizer, kmeans)
@@ -44,7 +46,7 @@ def km(movements, clusters=2):
     return (df.sort_values('labels'))
 
 #implement PCA
-def pca(movements, clusters=2):
+def pca(movements,companies=companies, clusters=2):
     normalizer=Normalizer()
     new=normalizer.fit_transform(movements)
     reduced_data=PCA(n_components=2).fit_transform(new)
@@ -86,7 +88,9 @@ def pca(movements, clusters=2):
     marker='x', s=169, linewidth=3,
     color='w', zorder=10)
 
-    plt.title('K-Means Clustering on Stock Market Movements (PCA-Reduced Data)')
+    plt.title('K-Means Clustering on Stock Market Movements (PCA-Reduced Data)', fontdict={'fontsize':18})
+    plt.text(.75,.75, "USA", fontdict={'fontsize':18})
+    plt.text(-1,.75, "China", fontdict={'fontsize':18})
     plt.xlim(x_min, x_max)
     plt.ylim(y_min, y_max)
     plt.savefig("Images/clustering_pca.png")
@@ -96,3 +100,4 @@ def pca(movements, clusters=2):
 
 # df1=pd.DataFrame.from_dict(plot_movements(), orient='index')
 # print(df1.to_markdown())
+
