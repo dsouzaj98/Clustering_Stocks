@@ -40,3 +40,41 @@ The stock price data I used was gathered by Yahoo Finance.  The columns included
 | ('Bank of China', '3988.HK')    |  -30.3586    |
 | ('JD.com', '9618.HK')           |  -33.9905    |
 | ('Alibaba', '9988.HK')          |  -23.9164    |
+
+
+
+
+
+
+|          Company                       |            Label |
+|:--------------------------------|-------------:|
+| ('Apple', 'AAPL')               |    0  |
+| ('Amazon', 'AMZN')              |    0  |
+| ('Berkshire Hathaway', 'BRK-B') |   0|
+| ('Facebook', 'FB')              |    0  |
+| ('Google', 'Googl')             |    0  |
+| ('Home Depot', 'HD')            |    0  |
+| ('Intel', 'INTC')               |    0 |
+| ('Johnson and Johnson', 'JNJ')  |    0 |
+| ('JP Morgan Chase', 'JPM')      |  0  |
+| ('Mastercard', 'MA')            |    0 |
+| ('Microsoft', 'MSFT')           |    0 |
+| ('Proctor and Gamble', 'PG')    |    0 |
+| ('United Healthcare', 'UNH')    |    0|
+| ('Visa', 'V')                   |    0 |
+| ('Verizon', 'VZ')               |    0 |
+| ('HSBC', '0005.HK')             | 1     |
+| ('Tencent', '0700.HK')          |  1    |
+| ('CCB', '0939.HK')              |  1    |
+| ('China Mobile', '0941.HK')     |  1    |
+| ('ABC', '1288.HK')              | 1     |
+| ('AIA', '1299.HK')              |  1    |
+| ('ICBC', '1398.HK')             |   1   |
+| ('PSBC', '1658.HK')             | 1    |
+| ('PING AN', '2318.HK')          |   1   |
+| ('CHINA LIFE', '2628.HK')       |  1    |
+| ('Meituan', '3690.HK')          |  1    |
+| ('CM BANK', '3698.HK')          |  1   |
+| ('Bank of China', '3988.HK')    |  1  |
+| ('JD.com', '9618.HK')           |  1    |
+| ('Alibaba', '9988.HK')          |  1    |

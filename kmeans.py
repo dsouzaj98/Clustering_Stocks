@@ -4,22 +4,25 @@ from sklearn.pipeline import make_pipeline
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from tomark import Tomark 
+import matplotlib.gridspec as gs 
 
 def plot_us():
     us_mv_dict={}
     for i in range(15):
+        plt.figure()
         us_mv_dict[us_companies[i]]=np.mean(us_movements[i])
         plt.plot(us_data[:900].index,us_movements[i])
         plt.title(us_companies[i])
-        #plt.savefig(f"Images/movements/{us_companies[i]}.png")
+        plt.savefig(f"Images/movements/{us_companies[i]}.png")
     return us_mv_dict
 def plot_china():
     c_mv_dict={}
     for i in range(15):
+        plt.figure()
         c_mv_dict[china_companies[i]]=np.mean(china_movements[i])
         plt.plot(china_data[:900].index,china_movements[i])
         plt.title(china_companies[i])
-        #plt.savefig(f"Images/movements/{china_companies[i]}.png")
+        plt.savefig(f"Images/movements/{china_companies[i]}.png")
     return c_mv_dict
 def plot_movements():
     mv_dict={}
@@ -86,9 +89,10 @@ def pca(movements, clusters=2):
     plt.title('K-Means Clustering on Stock Market Movements (PCA-Reduced Data)')
     plt.xlim(x_min, x_max)
     plt.ylim(y_min, y_max)
+    plt.savefig("Images/clustering_pca.png")
     plt.show()
+    return(df.sort_values('labels'))
 
 
-
-df1=pd.DataFrame.from_dict(plot_movements(), orient='index')
-print(df1.to_markdown())
+# df1=pd.DataFrame.from_dict(plot_movements(), orient='index')
+# print(df1.to_markdown())
