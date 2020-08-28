@@ -93,6 +93,8 @@ def pca(movements,companies=companies, clusters=2):
     plt.text(-1,.75, "China", fontdict={'fontsize':18})
     plt.xlim(x_min, x_max)
     plt.ylim(y_min, y_max)
+    plt.xlabel('PC1')
+    plt.ylabel('PC2')
     plt.savefig("Images/clustering_pca.png")
     plt.show()
     return(df.sort_values('labels'))
