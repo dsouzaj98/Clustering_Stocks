@@ -94,7 +94,7 @@ I performed linear dimensionality reduction with PCA and then ran the kmeans clu
 ![clusters](Images/clustering_pca.png)
 
 |   labels | companies                       |
-|---:|---------:|:--------------------------------|
+|---------:|:--------------------------------|
 |        0 | ('Apple', 'AAPL')               |
 |        0 | ('Visa', 'V')                   |
 |        0 | ('United Healthcare', 'UNH')    |
