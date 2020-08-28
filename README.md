@@ -173,3 +173,5 @@ Using the daily movements for Chinese and American companies, I was able to pred
 ## Next Steps
 
 I would like to explore clustering further by further examining the sectors inside each individual country (eg. Technology, Oil, etc.) and try to cluster the companies by their appropriate sector.
+
+<img src="Images/stock_market.jpeg" width="500">
