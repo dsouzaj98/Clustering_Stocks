@@ -3,11 +3,11 @@
 ![banner](Images/usvchina.jpg)
 
 ## Introduction
-In this project, I will use KMeans Clustering to guess whether a company is based in the U.S. or China based on their stock price information.  
+In this project, I used KMeans Clustering to guess whether a company is based in the U.S. or China based on their stock price information.  
 
-The stock price data I used was gathered by Yahoo Finance and it included daily data from Jan 1, 2017 to Aug 24, 2020.  The columns included Date, Open Price, Close Price, Adjusted Close, High, Low, and Volume.    
+The stock price data I used was gathered by Yahoo Finance and it included daily data for 30 companies from Jan 1, 2017 to Aug 24, 2020.  The data was gathered form the New York and Honk Kong stock exchanges.  This data included Date, Open Price, Close Price, Adjusted Close, High, Low, and Volume.    
 
-Using a dictionary of Chinese and American companies, I extracted the open and close prices to create a daily movement of the stock price.  
+Using a dictionary of Chinese and American companies, I extracted the open and close prices to create a daily movement of the stock price.  There were some missing points for a few Chinese companies so I replaced those values in the movement table with the average movement for that company.
 
 
 ## Company Average Movements
@@ -49,7 +49,7 @@ Using a dictionary of Chinese and American companies, I extracted the open and c
 
 
 ## KMeans Implementation
-Before utilizing the kmeans clustering, I normalized the data so that the clusters did not simply cluster based on the raw price of the movements.  After normalizing, I ran my kmeans pipeline to predict the cluster for each company. <br><br>
+Before utilizing the kmeans clustering, I normalized the data so that the clusters did not simply cluster based on the raw stock price of the movements.  After normalizing, I used my kmeans pipeline to predict the cluster for each company. <br><br>
 
 
 
@@ -87,7 +87,7 @@ Before utilizing the kmeans clustering, I normalized the data so that the cluste
 | ('Alibaba', '9988.HK')          |  1    |
 
 
-The clusters accurately predicted which country each company belonged to.  Let's find another way to visualize this.<br><br>
+Great!  The clusters accurately predicted which country each company belonged to.  Let's find another way to visualize this.<br><br>
 ## PCA Implementation
 I performed linear dimensionality reduction with PCA and then ran the kmeans clustering algorithm on the reduced data.  The results are now shown in a meshgrid.  
 
